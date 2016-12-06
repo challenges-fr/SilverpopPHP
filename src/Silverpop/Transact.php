@@ -35,17 +35,17 @@ class Transact {
      *
      *     $engage->sendEmail(123, array(
      *         'EMAIL' => 'som@email.tld',
-               'BODY_TYPE' => 'HTML',
-               'PERSONALIZATION' => array(
-	               array(
-		               'TAG_NAME' => 'SomeParam',
-		               'VALUE' => 'SomeValue'
-	               ),
-	               array(
-		               'TAG_NAME' => 'SomeParam',
-		               'VALUE' => 'SomeValue'
-	               )
-	            )
+     *           'BODY_TYPE' => 'HTML',
+     *           'PERSONALIZATION' => array(
+     *           array(
+     *             'TAG_NAME' => 'SomeParam',
+     *             'VALUE' => 'SomeValue'
+     *           ),
+     *           array(
+     *             'TAG_NAME' => 'SomeParam',
+     *             'VALUE' => 'SomeValue'
+     *          )
+     *        )
      *     ));
      *
      * @param int   $campaingID ID of capaing upon which to base the mailing.
@@ -65,19 +65,19 @@ class Transact {
 	    	"NO_RETRY_ON_FAILURE" => "true",
 	    	"RECIPIENT" => $recipient
         );
-        
+
         if($transactionID !== null) {
 	        $data["XTMAILING"]["TRANSACTION_ID"] = $transactionID;
         }
 
         $response = $this->_request($data);
-        
+
         $result = $response["XTMAILING_RESPONSE"];
-        
+
         if ($this->_isSuccess($result) && $result['EMAILS_SENT'] != 0) {
             return $result['RECIPIENT_DETAIL'];
         }
-        
+
         throw new \Exception("Silverpop\\Transact::submit Error: ".$this->_getErrorFromResponse($result));
     }
 
@@ -100,7 +100,7 @@ class Transact {
         }
 
         $jsessionid = isset($this->_jsessionid) ? $this->_jsessionid : '';
-        
+
         $response = $this->_httpPost($jsessionid, $xml);
         if ($response) {
             $arr =  \Silverpop\Util\xml2array($response);
@@ -149,11 +149,11 @@ class Transact {
 	    if($result['ERROR_CODE'] != 0) {
 			return $result['ERROR_STRING'];
 		}
-		
+
 		if($result['NUMBER_ERRORS'] != 0) {
 	    	return $result['RECIPIENT_DETAIL']['ERROR_STRING'];
 	    }
-	    
+
         return 'Unknown Server Error';
     }
 
@@ -165,7 +165,7 @@ class Transact {
 	    if($result['ERROR_CODE'] == 0 && $result['NUMBER_ERRORS'] == 0) {
 		    return true;
 	    }
-	    
+
         return false;
     }
 

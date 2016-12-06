@@ -617,6 +617,169 @@ class EngagePod {
 
     }
 
+    public function exportList($databaseID, $email = '') {
+        // Error: "Unkown column name" for:
+        // <COLUMN>ACTIVITE_CHS</COLUMN>
+        // <COLUMN>CODE_SUPPLEMENT_CHL</COLUMN>
+        // <COLUMN>CODE_SUPPLEMENT_SCA</COLUMN>
+        // <COLUMN>FORMULE_CHS</COLUMN>
+
+        $data = <<<EOT
+<Envelope>
+    <Body>
+        <ExportList>
+            <LIST_ID>{$databaseID}</LIST_ID>
+            <EMAIL>{$email}</EMAIL>
+            <EXPORT_TYPE>ALL</EXPORT_TYPE>
+            <EXPORT_FORMAT>CSV</EXPORT_FORMAT>
+            <FILE_ENCODING>UTF-8</FILE_ENCODING>
+            <INCLUDED_LEAD_SOURCE>true</INCLUDED_LEAD_SOURCE>
+            <EXPORT_COLUMNS>
+                <COLUMN>Email</COLUMN>
+                <COLUMN>Opt In Date</COLUMN>
+                <COLUMN>Opted Out</COLUMN>
+                <COLUMN>Opt In Details</COLUMN>
+                <COLUMN>Email Type</COLUMN>
+                <COLUMN>Opted Out Date</COLUMN>
+                <COLUMN>Opt Out Details</COLUMN>
+                <COLUMN>ACTIVITE_CHL</COLUMN>
+                <COLUMN>ACTIVITE_SCA</COLUMN>
+                <COLUMN>ANNEE_NAISSANCE</COLUMN>
+                <COLUMN>CHA_SOMMET_ECO</COLUMN>
+                <COLUMN>CODE</COLUMN>
+                <COLUMN>CODE REVUE CHS</COLUMN>
+                <COLUMN>CODE SUPPLEMENT CHS</COLUMN>
+                <COLUMN>CODE_ORIGINE</COLUMN>
+                <COLUMN>CODE_POSTAL</COLUMN>
+                <COLUMN>CODE_PROMO</COLUMN>
+                <COLUMN>CODE_REVUE_CHL</COLUMN>
+                <COLUMN>CODE_REVUE_SCA</COLUMN>
+                <COLUMN>CODE_SOURCE</COLUMN>
+                <COLUMN>COMMUNE</COLUMN>
+                <COLUMN>CONVERSION_BEFOREDINNER</COLUMN>
+                <COLUMN>CSP</COLUMN>
+                <COLUMN>DATEJOIN</COLUMN>
+                <COLUMN>DATEOFBIRTH</COLUMN>
+                <COLUMN>DATEUNJOIN</COLUMN>
+                <COLUMN>DATE_ABO_AUTOMOBILE_CHA</COLUMN>
+                <COLUMN>DATE_ABO_CHA_ACTU_10H30</COLUMN>
+                <COLUMN>DATE_ABO_CHA_ACTU_18H</COLUMN>
+                <COLUMN>DATE_ABO_CHA_DER_MIN</COLUMN>
+                <COLUMN>DATE_ABO_CHA_SOIR</COLUMN>
+                <COLUMN>DATE_ABO_CHA_TOPSWE</COLUMN>
+                <COLUMN>DATE_ABO_CHA_VIP</COLUMN>
+                <COLUMN>DATE_ABO_CHA_VIP_GAN</COLUMN>
+                <COLUMN>DATE_ABO_IMMO_CHA</COLUMN>
+                <COLUMN>DATE_ABO_LSF_CHA</COLUMN>
+                <COLUMN>DATE_ABO_MAGAZINE_CHA</COLUMN>
+                <COLUMN>DATE_ABO_MAGAZINE_SEA</COLUMN>
+                <COLUMN>DATE_ABO_NOTIF_MAG_CHL</COLUMN>
+                <COLUMN>DATE_ABO_NOTIF_MAG_CHL_SOIR</COLUMN>
+                <COLUMN>DATE_ABO_NOTIF_MAG_SCA</COLUMN>
+                <COLUMN>DATE_ABO_OPTIN_NOUVEAUTES_CHA</COLUMN>
+                <COLUMN>DATE_ABO_OPTIN_NOUVEAUTES_CHS</COLUMN>
+                <COLUMN>DATE_ABO_OPTIN_NOUVEAUTES_SEA</COLUMN>
+                <COLUMN>DATE_ABO_OPTIN_PARTENAIRES_CHA</COLUMN>
+                <COLUMN>DATE_ABO_OPTIN_PARTENAIRES_CHS</COLUMN>
+                <COLUMN>DATE_ABO_OPTIN_PARTENAIRES_SEA</COLUMN>
+                <COLUMN>DATE_ABO_SEA_ACTU</COLUMN>
+                <COLUMN>DATE_ABO_SEA_DER_MIN</COLUMN>
+                <COLUMN>DATE_ABO_SEA_DER_MIN</COLUMN>
+                <COLUMN>DATE_DESABO_NOTIF_MAG_CHL</COLUMN>
+                <COLUMN>DATE_DESABO_NOTIF_MAG_CHL_SOIR</COLUMN>
+                <COLUMN>DATE_DESABO_NOTIF_MAG_SCA</COLUMN>
+                <COLUMN>DATE_DESABO_OPTIN_NOUVEAUTES_CHA</COLUMN>
+                <COLUMN>DATE_DESABO_OPTIN_NOUVEAUTES_CHS</COLUMN>
+                <COLUMN>DATE_DESABO_OPTIN_NOUVEAUTES_SEA</COLUMN>
+                <COLUMN>DATE_DESABO_OPTIN_PARTENAIRES_CHA</COLUMN>
+                <COLUMN>DATE_DESABO_OPTIN_PARTENAIRES_CHS</COLUMN>
+                <COLUMN>DATE_DESABO_OPTIN_PARTENAIRES_SEA</COLUMN>
+                <COLUMN>DATE_DESA_AUTOMOBILE_CHA</COLUMN>
+                <COLUMN>DATE_DESA_CHA_ACTU_10H30</COLUMN>
+                <COLUMN>DATE_DESA_CHA_ACTU_18H</COLUMN>
+                <COLUMN>DATE_DESA_CHA_DER_MIN</COLUMN>
+                <COLUMN>DATE_DESA_CHA_SOIR</COLUMN>
+                <COLUMN>DATE_DESA_CHA_TOPSWE</COLUMN>
+                <COLUMN>DATE_DESA_CHA_VIP</COLUMN>
+                <COLUMN>DATE_DESA_CHA_VIP_GAN</COLUMN>
+                <COLUMN>DATE_DESA_IMMO_CHA</COLUMN>
+                <COLUMN>DATE_DESA_LSF_CHA</COLUMN>
+                <COLUMN>DATE_DESA_MAGAZINE_CHA</COLUMN>
+                <COLUMN>DATE_DESA_MAGAZINE_SEA</COLUMN>
+                <COLUMN>DATE_DESA_SEA_ACTU</COLUMN>
+                <COLUMN>DATE_DESA_SEA_DER_MIN</COLUMN>
+                <COLUMN>DEPARTEMENT</COLUMN>
+                <COLUMN>DEVICE</COLUMN>
+                <COLUMN>ENVOYER_A_AMI</COLUMN>
+                <COLUMN>FIRSTNAME</COLUMN>
+                <COLUMN>FORMULE_CHL</COLUMN>
+                <COLUMN>FORMULE_SCA</COLUMN>
+                <COLUMN>LASTACTIVITY</COLUMN>
+                <COLUMN>LASTNAME</COLUMN>
+                <COLUMN>LAST_CLICK_DATE</COLUMN>
+                <COLUMN>LAST_OPEN_DATE</COLUMN>
+                <COLUMN>LAST_SENT_DATE</COLUMN>
+                <COLUMN>LAST_UPDATE</COLUMN>
+                <COLUMN>LIEU_DIT</COLUMN>
+                <COLUMN>MASTER_SUPPRESSION_LIST</COLUMN>
+                <COLUMN>NL_AUTOMOBILE_CHA</COLUMN>
+                <COLUMN>NL_CBD_DER_MIN</COLUMN>
+                <COLUMN>NL_CHA_ACTU_10H30</COLUMN>
+                <COLUMN>NL_CHA_ACTU_18H</COLUMN>
+                <COLUMN>NL_CHA_DER_MIN</COLUMN>
+                <COLUMN>NL_CHA_SOIR</COLUMN>
+                <COLUMN>NL_CHA_TOPSWE</COLUMN>
+                <COLUMN>NL_CHA_VIP</COLUMN>
+                <COLUMN>NL_CHA_VIP_GAN</COLUMN>
+                <COLUMN>NL_IMMO_CHA</COLUMN>
+                <COLUMN>NL_LSF_CHA</COLUMN>
+                <COLUMN>NL_MAGAZINE_CHA</COLUMN>
+                <COLUMN>NL_SEA_ACTU</COLUMN>
+                <COLUMN>NL_SEA_DER_MIN</COLUMN>
+                <COLUMN>NOM_COMPLEMENT</COLUMN>
+                <COLUMN>NOTIF_MAG_CHL</COLUMN>
+                <COLUMN>NOTIF_MAG_CHL_SOIR</COLUMN>
+                <COLUMN>NOTIF_MAG_SCA</COLUMN>
+                <COLUMN>NOTIF_MAG_SCA</COLUMN>
+                <COLUMN>NUMERO_ABONNE</COLUMN>
+                <COLUMN>OPTIN_NOUVEAUTES_CHA</COLUMN>
+                <COLUMN>OPTIN_NOUVEAUTES_CHS</COLUMN>
+                <COLUMN>OPTIN_NOUVEAUTES_SEA</COLUMN>
+                <COLUMN>OPTIN_PARTENAIRES_CHA</COLUMN>
+                <COLUMN>OPTIN_PARTENAIRES_CHS</COLUMN>
+                <COLUMN>OPTIN_PARTENAIRES_SEA</COLUMN>
+                <COLUMN>PAYS</COLUMN>
+                <COLUMN>SOCIETE</COLUMN>
+                <COLUMN>SOURCE</COLUMN>
+                <COLUMN>STATUT CHS</COLUMN>
+                <COLUMN>STATUT_CHL</COLUMN>
+                <COLUMN>STATUT_SCA</COLUMN>
+                <COLUMN>STOP_UTILISATION_EXTERNE</COLUMN>
+                <COLUMN>STOP_UTILISATION_INTERNE</COLUMN>
+                <COLUMN>TEL_MOBILE</COLUMN>
+                <COLUMN>TITLE</COLUMN>
+                <COLUMN>VOIE</COLUMN>
+                <COLUMN>VOIE_COMPLEMENT</COLUMN>
+            </EXPORT_COLUMNS>
+        </ExportList>
+    </Body>
+</Envelope>
+EOT;
+
+        $response = $this->_request($data);
+        $result = $response['Envelope']['Body']['RESULT'];
+
+        if (!$this->_isSuccess($result)) {
+            throw new \Exception('ExportList Error: '.$this->_getErrorFromResponse($response));
+        }
+
+        if (!isset($result['JOB_ID'])) {
+            throw new \Exception('Exported list but no job ID was returned from the server.');
+        }
+
+        return ['job_id' => $result['JOB_ID'], 'file_path' => $result['FILE_PATH']];
+    }
+
     /**
      * Get a data job status
      *
