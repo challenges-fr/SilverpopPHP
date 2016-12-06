@@ -740,7 +740,6 @@ class EngagePod {
                 <COLUMN>NOTIF_MAG_CHL</COLUMN>
                 <COLUMN>NOTIF_MAG_CHL_SOIR</COLUMN>
                 <COLUMN>NOTIF_MAG_SCA</COLUMN>
-                <COLUMN>NOTIF_MAG_SCA</COLUMN>
                 <COLUMN>NUMERO_ABONNE</COLUMN>
                 <COLUMN>OPTIN_NOUVEAUTES_CHA</COLUMN>
                 <COLUMN>OPTIN_NOUVEAUTES_CHS</COLUMN>
