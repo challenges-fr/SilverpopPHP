@@ -684,7 +684,6 @@ class EngagePod {
                 <COLUMN>DATE_ABO_OPTIN_PARTENAIRES_SEA</COLUMN>
                 <COLUMN>DATE_ABO_SEA_ACTU</COLUMN>
                 <COLUMN>DATE_ABO_SEA_DER_MIN</COLUMN>
-                <COLUMN>DATE_ABO_SEA_DER_MIN</COLUMN>
                 <COLUMN>DATE_DESABO_NOTIF_MAG_CHL</COLUMN>
                 <COLUMN>DATE_DESABO_NOTIF_MAG_CHL_SOIR</COLUMN>
                 <COLUMN>DATE_DESABO_NOTIF_MAG_SCA</COLUMN>
@@ -753,7 +752,6 @@ class EngagePod {
                 <COLUMN>STATUT CHS</COLUMN>
                 <COLUMN>STATUT_CHL</COLUMN>
                 <COLUMN>STATUT_SCA</COLUMN>
-                <COLUMN>STOP_UTILISATION_EXTERNE</COLUMN>
                 <COLUMN>STOP_UTILISATION_INTERNE</COLUMN>
                 <COLUMN>TEL_MOBILE</COLUMN>
                 <COLUMN>TITLE</COLUMN>
