@@ -618,11 +618,6 @@ class EngagePod {
     }
 
     public function exportList($databaseID, $email = '') {
-        // Error: "Unkown column name" for:
-        // <COLUMN>ACTIVITE_CHS</COLUMN>
-        // <COLUMN>CODE_SUPPLEMENT_CHL</COLUMN>
-        // <COLUMN>CODE_SUPPLEMENT_SCA</COLUMN>
-        // <COLUMN>FORMULE_CHS</COLUMN>
 
         $data = <<<EOT
 <Envelope>
@@ -642,6 +637,7 @@ class EngagePod {
                 <COLUMN>Email Type</COLUMN>
                 <COLUMN>Opted Out Date</COLUMN>
                 <COLUMN>Opt Out Details</COLUMN>
+                <COLUMN>ACTIVITE CHS</COLUMN>
                 <COLUMN>ACTIVITE_CHL</COLUMN>
                 <COLUMN>ACTIVITE_SCA</COLUMN>
                 <COLUMN>ANNEE_NAISSANCE</COLUMN>
@@ -655,6 +651,8 @@ class EngagePod {
                 <COLUMN>CODE_REVUE_CHL</COLUMN>
                 <COLUMN>CODE_REVUE_SCA</COLUMN>
                 <COLUMN>CODE_SOURCE</COLUMN>
+                <COLUMN>CODE_SUPPLEMENT_CHA</COLUMN>
+                <COLUMN>CODE_SUPPLEMENT_SEA</COLUMN>
                 <COLUMN>COMMUNE</COLUMN>
                 <COLUMN>CONVERSION_BEFOREDINNER</COLUMN>
                 <COLUMN>CSP</COLUMN>
@@ -711,6 +709,7 @@ class EngagePod {
                 <COLUMN>DEVICE</COLUMN>
                 <COLUMN>ENVOYER_A_AMI</COLUMN>
                 <COLUMN>FIRSTNAME</COLUMN>
+                <COLUMN>FORMULE CHS</COLUMN>
                 <COLUMN>FORMULE_CHL</COLUMN>
                 <COLUMN>FORMULE_SCA</COLUMN>
                 <COLUMN>LASTACTIVITY</COLUMN>
