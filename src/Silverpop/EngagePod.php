@@ -751,6 +751,7 @@ class EngagePod {
                 <COLUMN>STATUT CHS</COLUMN>
                 <COLUMN>STATUT_CHL</COLUMN>
                 <COLUMN>STATUT_SCA</COLUMN>
+                <COLUMN>STOP_UTILISATION_EXTERNE</COLUMN>
                 <COLUMN>STOP_UTILISATION_INTERNE</COLUMN>
                 <COLUMN>TEL_MOBILE</COLUMN>
                 <COLUMN>TITLE</COLUMN>
